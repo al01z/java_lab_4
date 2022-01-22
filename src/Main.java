@@ -57,17 +57,19 @@ public class Main {
         c) stworzyć dowolny przykład z 2 lub 3 blokami catch i z blokiem finally,
          */
 
+        try {
+            String name = null;
+            name.toString();
+        } catch (NullPointerException e) {
+            System.out.println("Błąd nie można wywołać metody toString() na null");
+            throw e; // rzuca komunikat z klasy Exception
+        }
 
         try {
-            System.out.print("");
             int a = 0;
             int b = 3;
             int c = 5;
-            int delta = (b*b) - (4*a*c);
-
-            double x1 = ((-b)+Math.sqrt(delta))/(2*a);
-            double x2 = ((-b)-Math.sqrt(delta))/(2*a);
-            System.out.println("Pierwiastki: " + x1 + ", " + x2);
+            int x = (b*c)/a;
         } catch (ArithmeticException e) {
             System.out.println("ArithmeticException " + e.getMessage());
         }
