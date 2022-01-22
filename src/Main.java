@@ -23,6 +23,7 @@ public class Main {
         */
         boolean isIndexCorrect;
         String wejscie = "";
+        String wyjscie= "";
         int index = -1;
         isIndexCorrect = false;
         int[] tablica = {2,56,58,31,44,256};
@@ -30,9 +31,10 @@ public class Main {
         while(!isIndexCorrect) {
             try {
                 System.out.println("Podaj indeks do wyświetlenia:");
-                System.out.println(tablica[Integer.parseInt(scanner.next())]);
+                wejscie = scanner.next();
+                index = Integer.parseInt(wejscie);
+                System.out.println(tablica[index]);
                 isIndexCorrect = true;
-                System.out.println("Podaj indeks do wyświetlenia:");
             }
             catch (NumberFormatException e) {
                     System.out.println("Błąd, wprowadzony znak nie jest cyfrą!");
@@ -54,6 +56,21 @@ public class Main {
         b) stworzyć dowolny przykład z ArithmeticException ,
         c) stworzyć dowolny przykład z 2 lub 3 blokami catch i z blokiem finally,
          */
+
+
+        try {
+            System.out.print("");
+            int a = 0;
+            int b = 3;
+            int c = 5;
+            int delta = (b*b) - (4*a*c);
+
+            double x1 = ((-b)+Math.sqrt(delta))/(2*a);
+            double x2 = ((-b)-Math.sqrt(delta))/(2*a);
+            System.out.println("Pierwiastki: " + x1 + ", " + x2);
+        } catch (ArithmeticException e) {
+            System.out.println("ArithmeticException " + e.getMessage());
+        }
 
     }
 }
